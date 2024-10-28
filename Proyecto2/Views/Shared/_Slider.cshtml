@@ -1,0 +1,39 @@
+﻿@model Proyecto2.Models.ViewModel.HomeVM
+
+<div id="sliderImagenes" class="carousel slide" data-bs-ride="carousel">
+    <!-- Cambia data-ride a data-bs-ride para Bootstrap 5 -->
+    <ol class="carousel-indicators">
+        <li data-bs-target="#sliderImagenes" data-bs-slide-to="0" class="active"></li> <!-- Cambia data-target a data-bs-target -->
+        <li data-bs-target="#sliderImagenes" data-bs-slide-to="1"></li>
+        <li data-bs-target="#sliderImagenes" data-bs-slide-to="2"></li>
+        <li data-bs-target="#sliderImagenes" data-bs-slide-to="3"></li>
+        <li data-bs-target="#sliderImagenes" data-bs-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+
+        @{
+            int cont = 0;
+        }
+
+        @foreach(var slider in Model.Sliders)
+        {
+            var itemDinamico = cont++ == 0 ? "active" : "";
+
+            @if (slider.Estado == true)
+            {
+                <div class="carousel-item @itemDinamico">
+                    <img src="@Url.Content(slider.UrlImagen)" class="d-block w-100">
+                    <h1 class="text-white text-center bg-dark py-1">@Html.Raw(slider.Nombre)</h1>
+                </div>
+            }
+        }
+    </div>
+    <a class="carousel-control-prev" href="#sliderImagenes" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#sliderImagenes" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
