@@ -39,5 +39,3 @@ Accede a la interfaz web para gestionar las publicaciones del blog con funcional
 Estructura del Proyecto
 Capas: Estructura en capas mediante librerías de clases, promoviendo modularidad.
 Repository Pattern: Abstracción para el acceso a datos sin acoplamiento.
-Contribuciones
-Las contribuciones son bienvenidas. Por favor, sigue los lineamientos del proyecto y realiza pruebas antes de enviar cambios.
