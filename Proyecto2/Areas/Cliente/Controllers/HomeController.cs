@@ -18,25 +18,6 @@ namespace Proyecto2.Areas.Cliente.Controllers
             _contenedorTrabajo = contenedorTrabajo;
         }
 
-        //Primera versión sin paginación
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    HomeVM homeVM = new HomeVM()
-        //    {
-        //        Sliders = _contenedorTrabajo.Slider.GetAll(),
-        //        ListaArticulos = _contenedorTrabajo.Articulo.GetAll(),
-        //    };
-
-        //    /*Esto es para saber si está en Home o no*/
-
-        //    ViewBag.IsHome = true;
-
-        //    return View(homeVM);
-        //}
-
-        //Segunda versión: pagina de Inicio con Paginación
-
         [HttpGet]
         public IActionResult Index(int page = 1, int pageSize = 6)
         {
@@ -51,10 +32,6 @@ namespace Proyecto2.Areas.Cliente.Controllers
                 PageIndex = page,
                 TotalPages = (int)Math.Ceiling(articulos.Count() / (double)pageSize)
             };
-
-
-
-            /*Esto es para saber si está en Home o no*/
 
             ViewBag.IsHome = true;
 
